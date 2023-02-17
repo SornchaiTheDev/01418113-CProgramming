@@ -47,15 +47,35 @@ int main()
 
     for (i = 0; i < numPrisoners; i++)
     {
-        killerPtr += 3;
-        for (int j = numPrisoners - (&prisoners[numPrisoners - 1] - killerPtr) - 1; j < numPrisoners; j += m)
+        int j = 0;
+        int count = 0;
+        while (1)
         {
-            printf("j: %d \n", j);
-            // printf("for : %d\n", j);
-            // if (prisoners[j + m - 1] == 0)
+            // printf("j : %d\n", (j % numPrisoners) - 1);
+            if (prisoners[j] == 0)
+            {
+                count++;
+                j += m;
+                continue;
+            }
+            // if ((j % numPrisoners) - 1 >= 0 && prisoners[(j % numPrisoners) - 1] == 0)
+            // {
+            //     count++;
+            //     // j++;
+            //     printf("prisoner : %d\n", prisoners[(j % numPrisoners) - 1]);
             //     continue;
-            // killerPtr = &prisoners[j + m - 1];
-            // break;
+            // }
+            // killerPtr = &prisoners[(j % numPrisoners) - 1];
+            if (j > numPrisoners)
+            {
+                printf("j :%d\n", j);
+                killerPtr = &prisoners[(j % numPrisoners) - 1];
+            }
+            else
+            {
+                killerPtr = &prisoners[j];
+            }
+            break;
         }
 
         // append number of prisoner who is killed to array `killed`
@@ -94,10 +114,16 @@ void removeKilled(int *array, int size, int killedPrisoner)
  * 2
  *
  * 1 2 3
+ *
  * 2
- * 1 3
+ *
+ * 1 0 3
+ *
  * 2 1
- * 3
+ *
+ * 0 0 3
+ *
  * 2 1 3
  *
+ * 0 0 0
  */
