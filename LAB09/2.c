@@ -1,9 +1,26 @@
 #include <stdio.h>
 
+typedef enum
+{
+	SUN,
+	MON,
+	TUE,
+	WED,
+	THU,
+	FRI,
+	SAT
+} DayOfWeek;
 
+DayOfWeek
+findDayOfWeek(int day, int month)
+{
+	int months[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+	for (int i = 0; i < month - 1; i++)
+	{
+		day += months[i];
+	}
 
-DayOfWeek findDayOfWeek(int day, int month) {
-
+	return (day + 1) % 7;
 }
 
 int main()
@@ -16,20 +33,28 @@ int main()
 	scanf("%d %d", &day, &month);
 	dow = findDayOfWeek(day, month);
 	printf("Day:%d Month:%d of Year 2013 is ", day, month);
-	switch(dow){
-		case
-: printf("Sunday.\n"); break;
-		case
-: printf("Monday.\n"); break;
-		case
-: printf("Tuesday.\n"); break;
-		case
-: printf("Wednesday.\n"); break;
-		case
-: printf("Thursday.\n"); break;
-		case
-: printf("Friday.\n"); break;
-		case
-: printf("Saturday.\n"); break;
+	switch (dow)
+	{
+	case SUN:
+		printf("Sunday.\n");
+		break;
+	case MON:
+		printf("Monday.\n");
+		break;
+	case TUE:
+		printf("Tuesday.\n");
+		break;
+	case WED:
+		printf("Wednesday.\n");
+		break;
+	case THU:
+		printf("Thursday.\n");
+		break;
+	case FRI:
+		printf("Friday.\n");
+		break;
+	case SAT:
+		printf("Saturday.\n");
+		break;
 	}
 }
