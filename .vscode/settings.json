@@ -1,5 +1,18 @@
 {
     "files.associations": {
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "__bit_reference": "c",
+        "__node_handle": "c",
+        "bitset": "c",
+        "chrono": "c",
+        "__memory": "c",
+        "limits": "c",
+        "optional": "c",
+        "ratio": "c",
+        "system_error": "c",
+        "tuple": "c",
+        "type_traits": "c",
+        "vector": "c",
+        "stdio.h": "c"
     }
 }
