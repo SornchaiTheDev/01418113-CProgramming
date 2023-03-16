@@ -13,6 +13,7 @@
         "tuple": "c",
         "type_traits": "c",
         "vector": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "iosfwd": "cpp"
     }
 }

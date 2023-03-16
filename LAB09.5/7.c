@@ -25,7 +25,7 @@ void print()
 {
   for (int i = 0; i < SIZE; i++)
   {
-    printf("KEY  %2d: ", i);
+    printf("KEY %2d: ", i);
     NodePtr current = starter[i];
     while (current != NULL)
     {
